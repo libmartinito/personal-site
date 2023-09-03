@@ -11,7 +11,10 @@
     "lint": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\""
   },
   "dependencies": {
-    "astro": "^3.0.7"
+    "@astrojs/tailwind": "^5.0.0",
+    "alpinejs": "^3.13.0",
+    "astro": "^3.0.7",
+    "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.5.0",
