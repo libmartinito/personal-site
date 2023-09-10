@@ -9,5 +9,5 @@ export default defineConfig({
         analytics: true
     }),
     integrations: [tailwind()],
-    output: 'server',
+    output: 'static',
 });
