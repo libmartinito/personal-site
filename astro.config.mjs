@@ -8,5 +8,6 @@ export default defineConfig({
     adapter: vercel({
         analytics: true
     }),
-    integrations: [tailwind()]
+    integrations: [tailwind()],
+    output: 'server',
 });
