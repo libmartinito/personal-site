@@ -38,7 +38,11 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       <li>
         <span class='pr-4 font-semibold tabular-nums text-neutral-200'
           >2018</span
-        >helped design things like these
+        >helped design things like <span
+          id='open-modal'
+          class='cursor-pointer text-neutral-200 underline decoration-2 underline-offset-2'
+          >these</span
+        >
       </li>
 
       <li>
@@ -99,4 +103,41 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       </li>
     </ul>
   </section>
+
+  <dialog id='mammoet' class='w-full max-w-2xl'>
+    <iframe
+      id='mammoet-video'
+      class='aspect-video w-full'
+      src='https://www.youtube.com/embed/v7eq07aGo2Y?si=3ZgJkE5CsGISOpT9&controls=0&start=67'
+      title='YouTube video player'
+      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+      allowfullscreen></iframe>
+    <button id='close-modal' class='w-full bg-neutral-200 py-2 text-neutral-900'
+      >Close</button
+    >
+  </dialog>
 </BaseLayout>
+
+<script>
+  const closeModalButton = document.getElementById(
+    'close-modal'
+  ) as HTMLButtonElement
+  const openModalSpan = document.getElementById('open-modal') as HTMLSpanElement
+  const mammoetDialog = document.getElementById('mammoet') as HTMLDialogElement
+  const mammoetVideo = document.getElementById(
+    'mammoet-video'
+  ) as HTMLIFrameElement
+
+  const handleMammoetDialogOpen = () => {
+    mammoetDialog.showModal()
+  }
+
+  const handleMammoetDialogClose = () => {
+    mammoetDialog.close()
+    mammoetVideo.src = mammoetVideo.src
+  }
+
+  closeModalButton.addEventListener('click', handleMammoetDialogClose)
+  mammoetDialog.addEventListener('click', handleMammoetDialogClose)
+  openModalSpan.addEventListener('click', handleMammoetDialogOpen)
+</script>
