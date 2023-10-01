@@ -1,12 +1,12 @@
-                ---
+---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import tech from '../data/tech.json'
 import timeline from '../data/timeline.json'
-import { transformDescription } from '../utils/transformDescription';
+import { transformDescription } from '../utils/transformDescription'
 
-timeline.forEach(item => {
-    item.description = transformDescription(item.description, item.year)
-});
+timeline.forEach((item) => {
+  item.description = transformDescription(item.description, item.year)
+})
 ---
 
 <BaseLayout title='Lib Martinito'>
@@ -36,12 +36,16 @@ timeline.forEach(item => {
     <h2 class='pb-1 font-bold text-neutral-200'>Timeline</h2>
 
     <ul>
-        {timeline.map(item =>
-            <li class='flex gap-2'>
-                <div class='pr-4 font-semibold tabular-nums text-neutral-200'>{item.year}</div>
-                <div set:html={item.description}></div>
-            </li>
-        )}
+      {
+        timeline.map((item) => (
+          <li class='flex gap-2'>
+            <div class='pr-4 font-semibold tabular-nums text-neutral-200'>
+              {item.year}
+            </div>
+            <div set:html={item.description} />
+          </li>
+        ))
+      }
     </ul>
   </section>
 
@@ -49,12 +53,14 @@ timeline.forEach(item => {
     <h2 class='pb-1 font-bold text-neutral-200'>Tech stack</h2>
 
     <ul>
-        {tech.map(item =>
-            <li>
-                <div class='text-neutral-600'>{item.name}</div>
-                <div>{item.stack.join(', ')}</div>
-            </li>
-        )}
+      {
+        tech.map((item) => (
+          <li>
+            <div class='text-neutral-600'>{item.name}</div>
+            <div>{item.stack.join(', ')}</div>
+          </li>
+        ))
+      }
     </ul>
   </section>
 
