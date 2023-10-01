@@ -1,5 +1,6 @@
                 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import tech from '../data/tech.json'
 import timeline from '../data/timeline.json'
 import { transformDescription } from '../utils/transformDescription';
 
@@ -48,17 +49,12 @@ timeline.forEach(item => {
     <h2 class='pb-1 font-bold text-neutral-200'>Tech stack</h2>
 
     <ul>
-      <li>
-        <div class='text-neutral-600'>CodeCrafters</div>
-        <div>Ember.js, Ruby on Rails, TypeScript, PostgreSQL, Heroku</div>
-      </li>
-
-      <li>
-        <div class='text-neutral-600'>
-          Cambridge University Press & Assessment
-        </div>
-        <div>Vue.js, Nuxt, AdonisJS, TypeScript, MySQL, AWS</div>
-      </li>
+        {tech.map(item =>
+            <li>
+                <div class='text-neutral-600'>{item.name}</div>
+                <div>{item.stack.join(', ')}</div>
+            </li>
+        )}
     </ul>
   </section>
 
