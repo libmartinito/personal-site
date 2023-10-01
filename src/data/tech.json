@@ -1,0 +1,27 @@
+[
+    {
+        "slug": "codecrafters",
+        "name": "CodeCrafters",
+        "stack": [
+            "Ember.js",
+            "Next.js",
+            "TypeScript",
+            "Ruby on Rails",
+            "Go",
+            "PostgreSQL",
+            "Heroku"
+        ]
+    },
+    {
+        "slug": "cambridge",
+        "name": "Cambridge University Press & Assessment",
+        "stack": [
+            "Vue.js",
+            "Nuxt.js",
+            "AdonisJS",
+            "TypeScript",
+            "MySQL",
+            "AWS"
+        ]
+    }
+]
