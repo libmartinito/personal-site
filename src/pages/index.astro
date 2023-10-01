@@ -38,8 +38,8 @@ timeline.forEach((item) => {
     <ul>
       {
         timeline.map((item) => (
-          <li class='flex gap-2'>
-            <div class='pr-4 font-semibold tabular-nums text-neutral-200'>
+          <li class='flex gap-4'>
+            <div class='font-semibold tabular-nums text-neutral-200'>
               {item.year}
             </div>
             <div set:html={item.description} />
